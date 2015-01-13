@@ -16,7 +16,7 @@ $client = new TwitterOAuth(
 
 $deadline = new DateTime('2015-02-09'); // ??
 $today = new DateTime(date('Y-m-d'));
-$rest_day = $d2->diff($d1)->format('%a日');
+$rest_day = $today->diff($deadline)->format('%a日');
 $text = '修論提出まであと' . $rest_day . '！！';
 
 // random tweet text with rest time
