@@ -1,17 +1,20 @@
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
+use Abraham\TwitterOAuth\TwitterOAuth;
 
-const CONSUMER_KEY = '';
-const CONSUMER_SECRET = '';
-const TOKEN = '';
-const TOKEN_SECRET = '';
+Dotenv::load(__DIR__);
+
+define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
+define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
+define('ACCESS_TOKEN', getenv('ACCESS_TOKEN'));
+define('ACCESS_TOKEN_SECRET', getenv('ACCESS_TOKEN_SECRET'));
 
 $client = new TwitterOAuth(
     CONSUMER_KEY,
     CONSUMER_SECRET,
-    TOKEN,
-    TOKEN_SECRET
+    ACCESS_TOKEN,
+    ACCESS_TOKEN_SECRET
 );
 
 $deadline = new DateTime('2015-02-09'); // ??
